@@ -1,7 +1,14 @@
 [push]
   default = current
+
 [color]
-  ui = auto
+  diff = auto
+  branch = auto
+  status = auto
+
+[color "diff"]
+  meta = yellow
+
 [alias]
   aa = add --all
   ap = add --patch
@@ -14,12 +21,30 @@
   pr = !hub pull-request
   st = status
   up = !git fetch origin && git rebase origin/master
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+[apply]
+  whitespace = nowarn
+
+[help]
+  autocorrect = 1
+
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+
+[push]
+  default = current
+
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+
 [merge]
   ff = only
+
 [include]
-  path = .gitconfig.local
+  path = ~/.gitconfig.local
+
 [commit]
   template = ~/.gitmessage
