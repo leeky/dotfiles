@@ -1,0 +1,24 @@
+# Useful path aliases
+dev=~/Development/Current_Projects
+gh=~/Development/Current_Projects/github
+sf=~/Development/Current_Projects/Style_Foundry
+gol=~/Development/Current_Projects/Geeks\ of\ London/
+r2a=~/Development/Current_Projects/Style_Foundry/ReadyToAir/
+tb=~/Development/Current_Projects/thoughtbot
+
+alias heroku='nocorrect heroku'
+
+# Bundler
+alias b="bundle"
+
+# Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias m="migrate"
+alias rk="rake"
+alias s="rspec"
+
+# Unix
+alias v="$VISUAL"
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
