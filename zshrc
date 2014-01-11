@@ -15,9 +15,12 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
+# Autostart tmux
+ZSH_TMUX_AUTOSTART="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails3 git textmate ruby lighthouse)
-plugins=(bundler gem git rbenv brew sublime)
+plugins=(tmux bundler gem git rbenv brew sublime)
 
 # Customize to your needs...
 export NODE_PATH=/usr/local/lib/node_modules
