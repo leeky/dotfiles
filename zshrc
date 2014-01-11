@@ -30,6 +30,14 @@ source $ZSH/oh-my-zsh.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=$HOME/bin:$PATH
 
+# Show contents of directory after cd-ing into it
+chpwd() {
+  ls -lrthG
+}
+
 # Setup environment variables
 export VISUAL=vim
 export EDITOR=$VISUAL
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
