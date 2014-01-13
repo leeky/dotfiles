@@ -27,9 +27,9 @@ Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'nelstrom/vim-textobj-rubyblock.git'
 Bundle 'tpope/vim-commentary.git'
 Bundle 'kana/vim-textobj-user.git'
-"Bundle 'airblade/vim-gitgutter.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'maciakl/vim-neatstatus.git'
+Bundle 'thoughtbot/vim-rspec'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
