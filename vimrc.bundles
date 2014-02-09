@@ -38,6 +38,11 @@ Bundle 'scrooloose/syntastic'
 " Use ag for searching files in Vim
 Bundle 'rking/ag.vim'
 
+" Textmate-style snippets
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
