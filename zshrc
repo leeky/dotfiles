@@ -20,9 +20,14 @@ plugins=(bundler gem git rbenv brew sublime)
 # Customize to your needs...
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/local/mysql/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/share/npm/bin
-export RUBY_GC_MALLOC_LIMIT=60000000
-export RUBY_FREE_MIN=200000
 
+# Ruby Garbage Collection
+export RUBY_GC_HEAP_INIT_SLOTS=600000
+export RUBY_GC_HEAP_FREE_SLOTS=600000
+export RUBY_GC_HEAP_GROWTH_FACTOR=1.25
+export RUBY_GC_HEAP_GROWTH_MAX_SLOTS=300000
+
+# Include oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
