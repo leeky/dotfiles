@@ -12,5 +12,5 @@ install hub
 install ctags
 
 # Manage dotfiles with rcm
-tap thoughtbot/rcm
+tap thoughtbot/formulae
 install rcm
