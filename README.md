@@ -10,8 +10,6 @@ Set zsh as your login shell.
 
     chsh -s /bin/zsh
 
-Currently assumes oh-my-zsh is installed in ~/.oh-my-zsh/
-
 Install
 -------
 

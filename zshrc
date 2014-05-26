@@ -1,40 +1,68 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+setopt promptsubst
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="gianu"
+# load our own completion functions
+fpath=(~/.zsh/completion $fpath)
 
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# completion
+autoload -U compinit
+compinit
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+# load custom executable functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails3 git textmate ruby lighthouse)
-plugins=(gem git rbenv brew bundler)
+# Custom prompt
+source $HOME/.zsh/prompt
 
-# Customize to your needs...
-export NODE_PATH=/usr/local/lib/node_modules
-export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/local/mysql/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/share/npm/bin
+# makes color constants available
+autoload -U colors
+colors
 
-# Include oh-my-zsh
-source $ZSH/oh-my-zsh.sh
+# enable colored output from ls, etc
+export CLICOLOR=1
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH=$HOME/bin:$PATH
+# history settings
+setopt hist_ignore_all_dups inc_append_history
+HISTFILE=~/.zhistory
+HISTSIZE=4096
+SAVEHIST=4096
 
-# Show contents of directory after cd-ing into it
-chpwd() {
-  ls -lrthG
-}
+# awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
 
-# Setup environment variables
+# Enable extended globbing
+setopt extendedglob
+
+# Allow [ or ] whereever you want
+unsetopt nomatch
+
+# handy keybindings
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+bindkey "^Y" accept-and-hold
+bindkey "^N" insert-last-word
+bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+# use vim as the visual editor
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# load rbenv if available
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init - --no-rehash)"
+fi
+
+export PATH="$HOME/.bin:$PATH"
+
+# mkdir .git/safe in the root of repositories you trust
+export PATH=".git/safe/../../bin:$PATH"
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
