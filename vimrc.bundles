@@ -23,10 +23,11 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/ctags.vim'
-Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock.git'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'kana/vim-textobj-user.git'
+Plugin 'vim-ruby/vim-ruby'
 
 " Syntax checking
 Plugin 'scrooloose/syntastic'
