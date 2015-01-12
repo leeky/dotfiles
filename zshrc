@@ -20,6 +20,7 @@ plugins=(gem git rbenv brew bundler)
 # Customize to your needs...
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/local/mysql/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/share/npm/bin
+export UNBUNDLED_COMMANDS=ruby
 
 # Include oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -35,6 +36,13 @@ chpwd() {
 # Setup environment variables
 export VISUAL=vim
 export EDITOR=$VISUAL
+
+# mkdir .git/safe in the root of repositories you trust
+export PATH=".git/safe/../../bin:$PATH"
+
+# This setting is for the new UTF-8 terminal support
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
