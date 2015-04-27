@@ -135,9 +135,10 @@ nnoremap <leader><leader> <c-^>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Use bundled rspec command when running specs
-let g:rspec_command = '!bin/rspec {spec}'
+let g:rspec_command = 'Dispatch bin/rspec {spec}'
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
