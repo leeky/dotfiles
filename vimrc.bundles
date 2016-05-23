@@ -43,7 +43,8 @@ Plugin 'garbas/vim-snipmate'
 
 " Enhanced statusbar + buffer display
 Plugin 'bling/vim-bufferline'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Tab completions
 Plugin 'ervandew/supertab'

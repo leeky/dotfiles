@@ -1,16 +1,12 @@
-# Ensure homebrew is updated
-update
+# Ensure basic eackages
+brew "git"
+brew "vim"
+brew "ag"
+brew "tmux"
 
-# Ensure basic packages
-install git
-install vim
-install ag
-install tmux
-
-# Useful stuff
-install hub
-install ctags
+brew "hub"
+brew "ctags"
 
 # Manage dotfiles with rcm
-tap thoughtbot/formulae
-install rcm
+tap "thoughtbot/formulae"
+brew "rcm"
