@@ -15,17 +15,21 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails3 git textmate ruby lighthouse)
-plugins=(gem git rbenv brew bundler)
+plugins=(gem git rbenv brew bundler k)
 
 # Customize to your needs...
 export NODE_PATH=/usr/local/lib/node_modules
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/local/mysql/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/opt/local/bin:/usr/local/share/npm/bin
-export UNBUNDLED_COMMANDS=ruby
+# export UNBUNDLED_COMMANDS=ruby
+
+# Needed for Postgres command line tools
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # Include oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
+
 export PATH=$HOME/bin:$PATH
 
 # Show contents of directory after cd-ing into it
@@ -46,3 +50,10 @@ export LC_ALL=en_US.UTF-8
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source ~/.bin/tmuxinator.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export GOPATH=${HOME}/gocode
