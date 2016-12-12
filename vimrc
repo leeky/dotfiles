@@ -88,9 +88,12 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+" CtrlP CTags
+nnoremap <leader>. :CtrlPTag<cr>
+
 " Color scheme
 set background=dark
-colorscheme jellybeans
+colorscheme Tomorrow-Night-Bright
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -138,7 +141,7 @@ nnoremap <Leader>l :call RunLastSpec()<CR>
 nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " Use bundled rspec command when running specs
-let g:rspec_command = 'Dispatch bin/rspec {spec}'
+let g:rspec_command = 'Dispatch bundle exec rspec --no-color -f progress {spec}'
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -153,8 +156,23 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
+" Use :X to exit (as per :x), instead of encrypting file
+cnoreabbrev X x
+
 " configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Use RuboCop for syntax checking, but only if a .rubocop.yml is present
+let g:syntastic_ruby_checkers = ['mri']
+
+if filereadable('.rubocop.yml')
+  call add(g:syntastic_ruby_checkers, 'rubocop')
+endif
+
+" HAML linter
+let g:syntastic_haml_checkers = ['haml_lint']
+
 
 " Highlight words to avoid in tech writing
 " =======================================
@@ -175,6 +193,19 @@ autocmd BufWinEnter *.md call MatchTechWordsToAvoid()
 autocmd InsertEnter *.md call MatchTechWordsToAvoid()
 autocmd InsertLeave *.md call MatchTechWordsToAvoid()
 autocmd BufWinLeave *.md call clearmatches()
+
+" Simpler help
+autocmd filetype help nnoremap <buffer><cr> <c-]>
+autocmd filetype help nnoremap <buffer><bs> <c-T>
+autocmd filetype help nnoremap <buffer>q :q<CR>
+
+" Change cursor shape to an underscore  when in insert mode
+let &t_SI = "\<Esc>]50;CursorShape=2\x7"
+" Change back to a block in normal mode
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
