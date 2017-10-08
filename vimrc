@@ -173,6 +173,9 @@ endif
 " HAML linter
 let g:syntastic_haml_checkers = ['haml_lint']
 
+" JS linter
+let g:syntastic_javascript_checkers = ['jshint']
+
 
 " Highlight words to avoid in tech writing
 " =======================================

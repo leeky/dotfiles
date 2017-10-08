@@ -12,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 " Define bundles via Github repos
 Plugin 'danro/rename.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-bundler'
@@ -36,7 +36,8 @@ Plugin 'asux/vim-capybara'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " Syntax checking
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " Use ag for searching files in Vim
 Plugin 'rking/ag.vim'

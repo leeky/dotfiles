@@ -11,3 +11,5 @@ tmp/**/*
 !tmp/cache/.keep
 .byebug_history
 zeus.json
+.env.local
+node_modules/
