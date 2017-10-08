@@ -159,22 +159,22 @@ nnoremap <C-l> <C-w>l
 " Use :X to exit (as per :x), instead of encrypting file
 cnoreabbrev X x
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" " configure syntastic syntax checking to check on open as well as save
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
-" Use RuboCop for syntax checking, but only if a .rubocop.yml is present
-let g:syntastic_ruby_checkers = ['mri']
+" " Use RuboCop for syntax checking, but only if a .rubocop.yml is present
+" let g:syntastic_ruby_checkers = ['mri']
 
-if filereadable('.rubocop.yml')
-  call add(g:syntastic_ruby_checkers, 'rubocop')
-endif
+" if filereadable('.rubocop.yml')
+"   call add(g:syntastic_ruby_checkers, 'rubocop')
+" endif
 
-" HAML linter
-let g:syntastic_haml_checkers = ['haml_lint']
+" " HAML linter
+" let g:syntastic_haml_checkers = ['haml_lint']
 
-" JS linter
-let g:syntastic_javascript_checkers = ['jshint']
+" " JS linter
+" let g:syntastic_javascript_checkers = ['jshint']
 
 
 " Highlight words to avoid in tech writing

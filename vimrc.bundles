@@ -36,8 +36,8 @@ Plugin 'asux/vim-capybara'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " Syntax checking
-" Plugin 'scrooloose/syntastic'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 
 " Use ag for searching files in Vim
 Plugin 'rking/ag.vim'
