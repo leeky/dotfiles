@@ -41,9 +41,36 @@ augroup vimrcEx
     \   exe "normal g`\"" |
     \ endif
 
-  " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+  " Projections for Rails.vim
+  let g:rails_projections = {
+    \ "config/projections.json": {
+    \  "command": "projections"
+    \ },
+    \ "spec/features/*_spec.rb": {
+    \   "command": "feature",
+    \   "template": "require 'rails_helper'\n\nRSpec.feature '%h' do\n\nend",
+    \ },
+    \ "spec/factories/*.rb": {
+    \   "command":   "factory",
+    \   "affinity":  "collection",
+    \   "alternate": "app/models/%i.rb",
+    \   "related":   "db/schema.rb#%s",
+    \   "test":      "spec/models/%i_test.rb",
+    \   "template":  "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+    \   "keywords":  "factory sequence"
+    \ },
+    \}
+
+  let g:rails_gem_projects = {
+    \ "active_model_serializers": {
+    \   "app/serializers/*_serializer.rb": {
+    \     "command": "serializer",
+    \     "affinity": "model",
+    \     "test": "spec/serializers/%s_spec.rb",
+    \     "related": "app/models/%s.rb",
+    \     "template": "class %SSerializer < ActiveModel::Serializer\nend"
+    \   }
+    \ }}
 
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
