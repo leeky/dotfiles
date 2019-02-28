@@ -13,3 +13,4 @@ tmp/**/*
 zeus.json
 .env.local
 node_modules/
+.vimrc

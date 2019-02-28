@@ -241,3 +241,7 @@ autocmd VimResized * :wincmd =
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" Allow directory-specific .vimrc
+set exrc
+set secure
