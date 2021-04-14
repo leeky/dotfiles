@@ -14,3 +14,11 @@ zeus.json
 .env.local
 node_modules/
 .vimrc
+
+.generators
+.rakeTasks
+.idea/
+
+.notes.txt
+
+.trash/

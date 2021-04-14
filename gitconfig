@@ -50,6 +50,7 @@
 
 [commit]
   template = ~/.gitmessage
+  verbose = true
 [difftool "sourcetree"]
   cmd = opendiff \"$LOCAL\" \"$REMOTE\"
   path =

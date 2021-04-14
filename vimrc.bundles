@@ -1,6 +1,6 @@
 set nocompatible
 set number
-set relativenumber
+" set relativenumber
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
@@ -24,7 +24,7 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/ctags.vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'chriskempson/base16-vim'
 Plugin 'nelstrom/vim-textobj-rubyblock.git'
 Plugin 'tpope/vim-commentary.git'
 Plugin 'kana/vim-textobj-user.git'
@@ -37,15 +37,10 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " Syntax checking
 " Plugin 'vim-syntastic/syntastic'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 " Use ag for searching files in Vim
 Plugin 'rking/ag.vim'
-
-" Textmate-style snippets
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
 
 " Enhanced statusbar + buffer display
 Plugin 'bling/vim-bufferline'

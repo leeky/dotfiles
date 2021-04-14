@@ -15,7 +15,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails3 git textmate ruby lighthouse)
-plugins=(last-working-dir gem git brew bundler)
+plugins=(last-working-dir gem git brew bundler fzf rails cd-gitroot)
 
 # Customize to your needs...
 export NODE_PATH=/usr/local/lib/node_modules

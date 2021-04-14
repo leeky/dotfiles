@@ -120,7 +120,9 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 " Color scheme
 set background=dark
-colorscheme Tomorrow-Night-Bright
+set termguicolors
+let base16colorspace=256
+" colorscheme base16-tomorrow-night
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -185,24 +187,6 @@ nnoremap <C-l> <C-w>l
 
 " Use :X to exit (as per :x), instead of encrypting file
 cnoreabbrev X x
-
-" " configure syntastic syntax checking to check on open as well as save
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" " Use RuboCop for syntax checking, but only if a .rubocop.yml is present
-" let g:syntastic_ruby_checkers = ['mri']
-
-" if filereadable('.rubocop.yml')
-"   call add(g:syntastic_ruby_checkers, 'rubocop')
-" endif
-
-" " HAML linter
-" let g:syntastic_haml_checkers = ['haml_lint']
-
-" " JS linter
-" let g:syntastic_javascript_checkers = ['jshint']
-
 
 " Highlight words to avoid in tech writing
 " =======================================
